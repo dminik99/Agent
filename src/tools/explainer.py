@@ -5,6 +5,13 @@ from crewai.tools import tool
 
 @tool("explain_features")
 def explain_features(csv_path_and_label: str) -> str:
+    """
+    Ez az eszköz kiszámolja a Feature Importance értékeket.
+    Segít megérteni, hogy mely hálózati jellemzők (pl. src_bytes, count)
+    alapján döntött a modell a támadásról.
+    Bemenet: 'fajl_utvonal.csv|cel_valtozo_neve'.
+    Visszatér a top 5 legfontosabb jellemző listájával.
+    """
     try:
         path, label_col = csv_path_and_label.split('|')
         df = pd.read_csv(path)

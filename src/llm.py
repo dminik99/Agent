@@ -1,9 +1,6 @@
 from langchain_ollama import ChatOllama
 
-def get_llm():
-    model_name = "llama3.1"
 
-    return ChatOllama(
-        model=model_name,
-        base_url="http://localhost:11434"
-    )
+def get_llm():
+    model = "llama3.1"
+    return ChatOllama(model=model, base_url="http://localhost:11434/")

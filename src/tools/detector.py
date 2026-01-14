@@ -7,6 +7,11 @@ from crewai.tools import tool
 
 @tool("train_supervised_detector")
 def train_supervised_detector(csv_path_and_label: str) -> str:
+    """
+    Ez az eszköz egy felügyelt (supervised) ML modellt tanít a megadott adatokon.
+    Bemeneti formátum: 'fajl_utvonal.csv|cel_valtozo_neve'.
+    Visszatér a modell pontossági metrikáival (pl. Accuracy).
+    """
     try:
         path, label_col = csv_path_and_label.split('|')
         df = pd.read_csv(path)
@@ -35,6 +40,10 @@ def train_supervised_detector(csv_path_and_label: str) -> str:
 
 @tool("train_unsupervised_iforest")
 def train_unsupervised_iforest(csv_path: str) -> str:
+    """
+    Ez az eszköz anomália detektálást végez címkézetlen adatokon Isolation Forest segítségével.
+    Bemenet: csv fájl elérési útja. Visszatér a detektált anomáliák számával.
+    """
     try:
         df = pd.read_csv(csv_path)
         df_numeric = df.select_dtypes(include=['number']).fillna(0)

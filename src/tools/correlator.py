@@ -3,6 +3,11 @@ from crewai.tools import tool
 
 @tool("correlate_events")
 def correlate_events(csv_path: str) -> str:
+    """
+    IP címek és portok alapján keres összefüggéseket a megadott CSV fájlban.
+    Elemzi a 'cleaned_data.csv'-t, és visszaadja a gyanúsan viselkedő IP címeket
+    (pl. port scan) és a legtöbb forgalmat generáló címeket.
+    """
     try:
         df = pd.read_csv(csv_path)
         required_cols = ['src_ip', 'dst_ip', 'dst_port']
