@@ -1,6 +1,12 @@
 from langchain_ollama import ChatOllama
-
+from crewai import LLM
 
 def get_llm():
-    model = "llama3.1"
-    return ChatOllama(model=model, base_url="http://localhost:11434/")
+    """
+    A CrewAI natív LLM osztályát használjuk.
+    A 'model' paraméternél fontos az 'ollama/' prefix!
+    """
+    return LLM(
+        model="ollama/llama3.1",
+        base_url="http://localhost:11434"
+    )
