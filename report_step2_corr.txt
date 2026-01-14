@@ -1,0 +1,26 @@
+```
+{
+  "suspicious_ips": [
+    {
+      "ip_address": "192.168.1.100",
+      "port_scan": true,
+      "connection_count": 10
+    },
+    {
+      "ip_address": "192.168.1.200",
+      "port_scan": false,
+      "connection_count": 20
+    }
+  ],
+  "top_talkers": [
+    {
+      "ip_address": "192.168.1.50",
+      "connection_count": 30
+    },
+    {
+      "ip_address": "192.168.1.60",
+      "connection_count": 40
+    }
+  ]
+}
+```

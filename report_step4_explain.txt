@@ -1,0 +1,9 @@
+**Top Features and their Technical Representation**
+
+1. **src_bytes**: This feature represents the number of bytes sent from the source IP address, which can be indicative of malicious activity.
+2. **count**: This feature represents the total number of connections or requests made by an attacker, which can be a key indicator of a potential attack.
+3. **dst_host_count**: This feature represents the number of distinct destination host addresses involved in an attack, which can help identify patterns and anomalies.
+4. **dst_bytes**: This feature represents the number of bytes received from the destination IP address, which can provide insight into the nature of an attack.
+5. **protocol_type**: This feature represents the type of protocol used by the attacker (e.g., TCP, UDP, ICMP), which can help identify specific types of attacks.
+
+These features are ranked based on their importance in determining whether a sample is malicious or benign. The model's decision to classify a sample as malicious is heavily influenced by these features, making them crucial for understanding the underlying mechanisms driving the model's predictions.

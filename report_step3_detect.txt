@@ -1,0 +1,5 @@
+Thought: The user provided a csv file with label, which means we should use supervised learning.
+
+Action: train_supervised_detector
+
+Action Input: {"csv_path_and_label": "cleaned_data.csv|class"}
