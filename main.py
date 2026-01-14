@@ -5,8 +5,8 @@ from src.agents.agents import build_agents
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--csv", default="ids_logs.csv", help="Path to raw CSV file")
-    parser.add_argument("--label", default="class", help="Target column name (e.g., 'class' or 'label')")
+    parser.add_argument("--csv", default="file.csv", help="Path to raw CSV file")
+    parser.add_argument("--label", default="attack", help="Target column name (e.g., 'class' or 'label')")
     args = parser.parse_args()
 
     cleaner, correlator, detector, explainer, reporter = build_agents()

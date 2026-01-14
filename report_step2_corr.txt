@@ -1,26 +1,3 @@
-```
-{
-  "suspicious_ips": [
-    {
-      "ip_address": "192.168.1.100",
-      "port_scan": true,
-      "connection_count": 10
-    },
-    {
-      "ip_address": "192.168.1.200",
-      "port_scan": false,
-      "connection_count": 20
-    }
-  ],
-  "top_talkers": [
-    {
-      "ip_address": "192.168.1.50",
-      "connection_count": 30
-    },
-    {
-      "ip_address": "192.168.1.60",
-      "connection_count": 40
-    }
-  ]
-}
-```
+Correlation Report on 'saddr':
+- Top 5 Talkers: {'192.168.100.147': 189606, '192.168.100.148': 184648, '192.168.100.149': 178680, '192.168.100.150': 178002, '192.168.100.3': 1672}
+- Suspicious Scanners (connecting to >10 ports): {'192.168.100.147': 1632, '192.168.100.148': 1699, '192.168.100.149': 1534, '192.168.100.150': 1658, '192.168.100.3': 1375}

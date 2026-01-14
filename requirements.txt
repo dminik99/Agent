@@ -1,8 +1,0 @@
-crewai
-crewai-tools
-langchain-ollama
-langchain-community
-pandas
-numpy
-scikit-learn
-pydantic
