@@ -1,9 +1,7 @@
-The top 5 features driving the attacks are:
+Top 5 Features Driving Attacks:
 
-* pkseqid: This feature represents a unique identifier for each packet sequence. It is used by the model to identify and differentiate between different attack patterns.
-* proto: This feature represents the protocol used in the network communication, such as TCP, UDP, or ICMP. The model uses this information to understand the type of traffic and potential vulnerabilities.
-* saddr: This feature represents the source IP address of the packet. It is used by the model to identify the origin of the attack and track its progression.
-* daddr: This feature represents the destination IP address of the packet. It is used by the model to understand the target of the attack and potential vulnerabilities in the network.
-* category: This feature represents a high-level classification of the attack, such as denial-of-service (DoS) or unauthorized access. The model uses this information to provide a general understanding of the attack type and potential severity.
-
-Note that these features are not just random numbers, but rather they represent specific technical aspects of network communication that are used by the model to make predictions about attacks.
+1. **subcategory**: 0.36242921021385144
+2. **daddr**: 0.33658459431810106
+3. **category**: 0.12601763198045107
+4. **proto**: 0.07658579833158045
+5. **n_in_conn_p_dstip**: 0.04517441328230511

@@ -1,49 +1,66 @@
-**Cyber Security Incident Report**
+# **Cyber Security Incident Report**
 =====================================
 
-### Introduction
-
-This report provides an in-depth analysis of the cyber security incident based on the provided data and previous findings. It aims to provide a comprehensive understanding of the incident, including key indicators, suspicious actors, and detection accuracy.
-
-### Data Quality
+## Introduction
 ---------------
 
-The original dataset contained 98 rows with a schema consisting of seven features: `pkseqid`, `proto`, `saddr`, `sport`, `daddr`, `dport`, and `attack`. After cleaning, the data was saved to `cleaned_data.csv`.
+This report summarizes the findings of our investigation into the cyber security incident. The goal is to provide a clear and concise overview of the key indicators, suspicious actors, detection accuracy, and data quality.
 
-### Suspicious Actors
+## Data Quality
+-----------------
+
+The original dataset consisted of 99,999 rows with the following schema:
+```markdown
+Schema: {'pkseqid': 'int64', 'proto': 'object', 'saddr': 'object', 'sport': 'object', 'daddr': 'object', 'dport': 'object', 'n_in_conn_p_srcip': 'int64', 'n_in_conn_p_dstip': 'int64', 'attack': 'int64', 'category': 'object', 'subcategory': 'object'}
+```
+After cleaning the data, it was saved to a new file called `cleaned_data.csv`.
+
+## Suspicious Actors
 ---------------------
 
-Based on the correlation report, there are no suspicious scanners connecting to more than 10 ports.
+Based on our analysis, we identified top 5 talkers and suspicious scanners:
 
-### Top Talkers
---------------
-
-The top 5 talkers based on the correlation report are:
-
-| Source IP Address | Count |
+### Top 5 Talkers
+| IP Address | Number of Connections |
 | --- | --- |
-| `192.168.100.148` | 33 |
-| `192.168.100.147` | 25 |
-| `192.168.100.150` | 21 |
-| `192.168.100.149` | 19 |
+| 192.168.100.147 | 25,878 |
+| 192.168.100.148 | 25,127 |
+| 192.168.100.150 | 24,329 |
+| 192.168.100.149 | 24,308 |
+| 192.168.100.3 | 216 |
 
-### Detection Accuracy
+### Suspicious Scanners
+| IP Address | Number of Ports Connected to |
+| --- | --- |
+| 192.168.100.147 | 393 |
+| 192.168.100.148 | 416 |
+| 192.168.100.149 | 383 |
+| 192.168.100.150 | 438 |
+| 192.168.100.3 | 202 |
+
+## Detection Accuracy
 ----------------------
 
-The detection accuracy is 1.00, with an F1 score of 1.00.
+Our detection accuracy is **100%**, indicating that our system was able to correctly identify all suspicious activity.
 
-### Key Attack Indicators
--------------------------
+## Key Attack Indicators
+---------------------------
 
-Based on the feature analysis, the top 5 features driving the attacks are:
+Based on our analysis, the top 5 features driving attacks are:
 
-* **pkseqid**: This feature represents a unique identifier for each packet sequence and is used by the model to identify and differentiate between different attack patterns.
-* **proto**: This feature represents the protocol used in the network communication and is used by the model to understand the type of traffic and potential vulnerabilities.
-* **saddr**: This feature represents the source IP address of the packet and is used by the model to identify the origin of the attack and track its progression.
-* **daddr**: This feature represents the destination IP address of the packet and is used by the model to understand the target of the attack and potential vulnerabilities in the network.
-* **category**: This feature represents a high-level classification of the attack, such as denial-of-service (DoS) or unauthorized access, and is used by the model to provide a general understanding of the attack type and potential severity.
+1. **subcategory**: 0.36242921021385144
+2. **daddr**: 0.33658459431810106
+3. **category**: 0.12601763198045107
+4. **proto**: 0.07658579833158045
+5. **n_in_conn_p_dstip**: 0.04517441328230511
 
-### Conclusion
+## Conclusion
 ----------
 
-In conclusion, this cyber security incident report provides a comprehensive analysis of the incident based on previous findings. The key indicators suggest that there may be ongoing attacks from certain IP addresses, but further investigation is required to determine the full scope of the incident.
+In conclusion, this report highlights the key findings of our investigation into the cyber security incident. The top suspicious actors, detection accuracy, and key attack indicators have been identified and summarized in this report.
+
+Recommendations for future improvement include:
+
+* Implementing additional features to improve detection accuracy.
+* Conducting further analysis on the top 5 talkers and suspicious scanners.
+* Developing strategies to mitigate the impact of these suspicious actors.
