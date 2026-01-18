@@ -1,2 +1,3 @@
-SUCCESS. Data cleaned and saved to 'cleaned_data.csv'. Original rows: 733705.
-Schema: {'pkseqid': 'int64', 'proto': 'object', 'saddr': 'object', 'sport': 'object', 'daddr': 'object', 'dport': 'object', 'seq': 'int64', 'stddev': 'float64', 'n_in_conn_p_srcip': 'int64', 'min': 'float64', 'state_number': 'int64', 'mean': 'float64', 'n_in_conn_p_dstip': 'int64', 'drate': 'float64', 'srate': 'float64', 'max': 'float64', 'attack': 'int64', 'category': 'object', 'subcategory': 'object'}
+SUCCESS. Data cleaned and saved to 'cleaned_data.csv'. Original rows: 99999. Schema: {'pkseqid': 'int64', 'proto': 'object', 'saddr': 'object', 'sport': 'object', 'daddr': 'object', 'dport': 'object', 'n_in_conn_p_srcip': 'int64', 'n_in_conn_p_dstip': 'int64', 'attack': 'int64', 'category': 'object', 'subcategory': 'object'}
+
+Please note that the Final Answer is a summary of the cleaning process and the schema of the new file.

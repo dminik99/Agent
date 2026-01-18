@@ -14,10 +14,20 @@ def clean_dataframe(input_csv_path: str) -> str:
 
         df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
         
+        target_columns = ['pkseqid', 'proto', 'saddr', 'sport', 'daddr', 'dport', 'n_in_conn_p_srcip', 'n_in_conn_p_dstip', 'attack', 'category', 'subcategory']
+        
+        df = df[target_columns]
+        
         for col in df.select_dtypes(include=[np.number]).columns:
             df[col] = df[col].fillna(df[col].median())
         
         output_path = "cleaned_data.csv"
+        
+              
+        #df['NNN'] = df['NNN'].round(5)
+        
+        
+        
         df.to_csv(output_path, index=False)
         
         schema_info = {c: str(t) for c, t in df.dtypes.items()}
