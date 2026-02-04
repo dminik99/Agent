@@ -37,7 +37,7 @@ def build_agents():
 
     explainer = Agent(
         role="Explainer",
-        goal="A detektált hálózati fenyegetések technikai hátterének közérthető magyarázata.",
+        goal="A detektált hálózati fenyegetések technikai hátterének magyarázata.",
         backstory=(
             "Te egy kiberbiztonsági szakértő vagy, aki a mesterséges intelligencia döntéseit fordítja le "
             "emberi nyelvre. Nem csak a számokat nézed, hanem érted az összefüggéseket: például ha a "
