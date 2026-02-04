@@ -1,3 +1,29 @@
-{
-    "Accuracy": 1.00
-}
+```
+**Security Report**
+
+### Distribution of Detected Threats:
+
+* DDoS: 52616 occurrences
+* DoS: 44933 occurrences
+* Reconnaissance: 2432 occurrences
+* Normal: 16 occurrences
+* Theft: 2 occurrences
+
+### Detailed Subcategories:
+
+* UDP: 54149 occurrences
+* TCP: 43340 occurrences
+* Service_Scan: 1949 occurrences
+* OS_Fingerprint: 483 occurrences
+* HTTP: 60 occurrences
+* Normal: 16 occurrences
+* Keylogging: 2 occurrences
+
+**Top 3 Technical Features for Identifying Attacks:**
+
+1. Unique Ports (indicating potential port scanning)
+2. Total Connections (indicating high volume of traffic)
+3. Type of Traffic (UDP/TCP/HTTP, etc.)
+
+Note: The model performance metrics are not available due to the error encountered during training.
+```

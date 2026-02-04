@@ -1,3 +1,28 @@
-SUCCESS. Data cleaned and saved to 'cleaned_data.csv'. Original rows: 99999. Schema: {'pkseqid': 'int64', 'proto': 'object', 'saddr': 'object', 'sport': 'object', 'daddr': 'object', 'dport': 'object', 'n_in_conn_p_srcip': 'int64', 'n_in_conn_p_dstip': 'int64', 'attack': 'int64', 'category': 'object', 'subcategory': 'object'}
-
-Please note that the Final Answer is a summary of the cleaning process and the schema of the new file.
+```json
+{
+  "thoughts": [
+    {
+      "Thought": "I need to perform the data cleaning on the raw file located at \"file.csv\" and save the result in a new file called \"cleaned_data.csv\".",
+      "Action": "clean_dataframe",
+      "Action Input": {"input_csv_path": "file.csv"},
+      "Observation": "SUCCESS. Data cleaned and saved to 'cleaned_data.csv'. Original rows: 99999. Schema: {'pkseqid': 'int64', 'proto': 'object', 'saddr': 'object', 'sport': 'object', 'daddr': 'object', 'dport': 'object', 'n_in_conn_p_srcip': 'int64', 'n_in_conn_p_dstip': 'int64', 'attack': 'int64', 'category': 'object', 'subcategory': 'object'}"
+    }
+  ],
+  "Final Answer": {
+    "cleaning_process": "The raw file located at \"file.csv\" was cleaned and saved to a new file called \"cleaned_data.csv\"",
+    "schema": {
+      "pkseqid": "int64",
+      "proto": "object",
+      "saddr": "object",
+      "sport": "object",
+      "daddr": "object",
+      "dport": "object",
+      "n_in_conn_p_srcip": "int64",
+      "n_in_conn_p_dstip": "int64",
+      "attack": "int64",
+      "category": "object",
+      "subcategory": "object"
+    }
+  }
+}
+```

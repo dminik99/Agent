@@ -1,3 +1,20 @@
-Correlation Report on 'saddr':
-- Top 5 Talkers: {'192.168.100.147': 25878, '192.168.100.148': 25127, '192.168.100.150': 24329, '192.168.100.149': 24308, '192.168.100.3': 216}
-- Suspicious Scanners (connecting to >10 ports): {'192.168.100.147': 393, '192.168.100.148': 416, '192.168.100.149': 383, '192.168.100.150': 438, '192.168.100.3': 202}
+Top talkers:
+- {'saddr': '192.168.100.147', 'connections': 25877}
+- {'saddr': '192.168.100.148', 'connections': 25124}
+- {'saddr': '192.168.100.150', 'connections': 24326}
+- {'saddr': '192.168.100.149', 'connections': 24308}
+- {'saddr': '192.168.100.3', 'connections': 208}
+
+Potential port scanning IPs:
+- {'saddr': '192.168.100.150', 'unique_ports': 437, 'unique_dsts': 4}
+- {'saddr': '192.168.100.148', 'unique_ports': 415, 'unique_dsts': 4}
+- {'saddr': '192.168.100.147', 'unique_ports': 392, 'unique_dsts': 4}
+- {'saddr': '192.168.100.149', 'unique_ports': 382, 'unique_dsts': 4}
+- {'saddr': '192.168.100.5', 'unique_ports': 122, 'unique_dsts': 4}
+
+Top DoS victims:
+- {'daddr': '192.168.100.3', 'dos_connections': 11294, 'ddos_connections': 52519, 'total_connections': 63813}
+- {'daddr': '192.168.100.5', 'dos_connections': 11411, 'ddos_connections': 0, 'total_connections': 11411}
+- {'daddr': '192.168.100.7', 'dos_connections': 11130, 'ddos_connections': 0, 'total_connections': 11130}
+- {'daddr': '192.168.100.6', 'dos_connections': 11089, 'ddos_connections': 0, 'total_connections': 11089}
+- {'daddr': '192.168.100.147', 'dos_connections': 2, 'ddos_connections': 46, 'total_connections': 48}

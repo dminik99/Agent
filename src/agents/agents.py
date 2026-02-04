@@ -2,7 +2,7 @@ from crewai import Agent
 from src.llm import get_llm
 from src.tools.datacleaner import clean_dataframe
 from src.tools.correlator import correlate_events
-from src.tools.detector import train_supervised_detector, train_unsupervised_iforest
+from src.tools.detector import analyze_threat_distribution, train_and_predict_threats
 from src.tools.explainer import explain_features
 
 def build_agents():
@@ -27,18 +27,23 @@ def build_agents():
     )
 
     detector = Agent(
-        role="Detector",
-        goal="ML modellek futtatása a támadások detektálására.",
-        backstory="ML mérnök vagy. Ha van címke, supervised modellt használsz, ha nincs, anomália detektálást.",
-        tools=[train_supervised_detector, train_unsupervised_iforest],
+        role='Detector',
+        goal='Azonosítsd be a legveszélyesebb fenyegetéseket a hálózati forgalomban.',
+        backstory='Egy kiberbiztonsági szakértő vagy, aki ML modellek segítségével keres anomáliákat és konkrét támadási mintákat.',
+        tools=[analyze_threat_distribution, train_and_predict_threats],
         llm=llm,
-        verbose=True,
+        verbose=True
     )
 
     explainer = Agent(
         role="Explainer",
-        goal="Megmagyarázni, miért döntött úgy a modell, ahogy.",
-        backstory="XAI (Explainable AI) szakértő, aki a technikai feature-öket (pl. src_bytes) értelmezi.",
+        goal="A detektált hálózati fenyegetések technikai hátterének közérthető magyarázata.",
+        backstory=(
+            "Te egy kiberbiztonsági szakértő vagy, aki a mesterséges intelligencia döntéseit fordítja le "
+            "emberi nyelvre. Nem csak a számokat nézed, hanem érted az összefüggéseket: például ha a "
+            "'stddev' (időbeli szórás) alacsony, de a 'srate' (forrás sebesség) magas, az egy automatizált "
+            "DDoS támadásra utalhat. Feladatod, hogy elmagyarázd a döntési folyamatot a vezetőség számára."
+        ),
         tools=[explain_features],
         llm=llm,
         verbose=True,
