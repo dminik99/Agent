@@ -22,7 +22,6 @@ def _prepare_data(df):
 def analyze_threat_distribution(csv_path: str) -> str:
     """
     Megvizsgálja a fájlt és visszaadja a fenyegetések statisztikai eloszlását.
-    Ezt használd az elsődleges fenyegetések beazonosításához.
     """
     try:
         df = pd.read_csv(csv_path)
